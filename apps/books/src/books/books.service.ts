@@ -48,7 +48,7 @@ export class BooksService {
   }
 
   findAll() {
-    return `This action returns all books`;
+    return this.books
   }
 
   findOne(id: number) {

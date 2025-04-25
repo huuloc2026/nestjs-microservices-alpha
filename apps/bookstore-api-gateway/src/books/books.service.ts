@@ -5,7 +5,8 @@ import { ClientProxy } from '@nestjs/microservices';
 
 @Injectable()
 export class BooksService {
-  constructor(@Inject('BOOKS_CLIENTS') private booksClient: ClientProxy){}
+  constructor(@Inject('BOOKS_CLIENT') private booksClient: ClientProxy){}
+  
   create(createBookDto: CreateBookDto) {
     return this.booksClient.send('books.create',{})
   }
